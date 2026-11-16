@@ -3,7 +3,6 @@
         <div>
             <div class="footer-brand"><?= e(config('store.name')) ?></div>
             <p>JL. Syech Abdurrauf No.3, Kopelma Darussalam, Kec. Syiah Kuala, Kota Banda Aceh</p>
-            <p><?= e(config('store.email')) ?></p>
         </div>
         <div>
             <h4>Shop</h4>
