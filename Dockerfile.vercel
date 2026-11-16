@@ -1,0 +1,16 @@
+FROM dunglas/frankenphp:1-php8.3
+
+WORKDIR /app
+
+RUN install-php-extensions pdo_mysql mysqli curl mbstring
+
+COPY . /app
+
+RUN cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
+# Serve the project root: index.php, assets/, config/, etc.
+COPY Caddyfile /etc/frankenphp/Caddyfile
+
+ENV SERVER_NAME=:80
+
+EXPOSE 80
